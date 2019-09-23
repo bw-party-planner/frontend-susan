@@ -4,4 +4,4 @@ import React from 'react';
 
 
 
-export default ShoppingList
+export default ShoppingList;

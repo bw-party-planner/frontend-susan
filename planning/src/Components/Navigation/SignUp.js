@@ -4,4 +4,4 @@ import React from 'react';
 
 
 
-export default SignUp
+export default SignUp;
