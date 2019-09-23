@@ -13,13 +13,9 @@ const LoginForm = ({values,errors,touched,status}) => {
   return(
     <div className="user-form">
       <Form>
-        <Field type='text' name='name' placeholder='Name'/>
+        <Field type='text' name='name' placeholder='UserName'/>
         {touched.name && errors.name && (
           <p className='error'>{errors.name}</p>
-        )}
-        <Field type = 'text' name='email' placeholder='Email'/>
-        {touched.email && errors.email && (
-          <p className='error'>{errors.email}</p>
         )}
         <Field type = 'text' name='password' placeholder='Password'/>
         {touched.password && errors.password && (
@@ -29,8 +25,7 @@ const LoginForm = ({values,errors,touched,status}) => {
       </Form>
       {users.map(user => (
         <ul key={user.id}>
-          <li>Name: {user.name}</li>
-          <li>Email: {user.email}</li>
+          <li>Username: {user.name}</li>
           <li>Password: {user.password}</li>
         </ul>
       ))}
@@ -39,17 +34,15 @@ const LoginForm = ({values,errors,touched,status}) => {
 }
 
 const FormikLoginForm = withFormik ({
-  mapPropsToValues({name, email, password}){
+  mapPropsToValues({name, password}){
     return {
       name: name || '',
-      email: email || '',
       password: password || ''
      
     };
   },
   validationSchema:Yup.object().shape({
     name: Yup.string().required("Your name is required here!!!"),
-    email: Yup.string().required("Your email is required here!!!"),
     password: Yup.string().required("Please insert a Password!!!!"),
     
   }),

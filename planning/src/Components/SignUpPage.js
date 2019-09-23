@@ -4,6 +4,7 @@ import SignUpForm from './SignUpForm';
 import {Link, Route} from 'react-router-dom';
 import '../index.css';
 
+
 function SignUpPage() {
 return(
   <div>
@@ -16,7 +17,7 @@ return(
     <Route exact path='/sign-up' component={SignUpForm}/>
     <Route exact path='/login' component={LoginForm}/>
   </div>
-)
+ )
 }
 
 export default SignUpPage;

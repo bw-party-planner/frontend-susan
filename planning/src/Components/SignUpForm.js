@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {withFormik, Form, Field, Formik} from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import '../index.css';
 
 const SignUpForm = ({values,errors,touched,status}) => {
   const [users, setUsers] = useState([]);
@@ -13,7 +14,7 @@ const SignUpForm = ({values,errors,touched,status}) => {
   return(
     <div className="user-form">
       <Form>
-        <Field type='text' name='name' placeholder='Name'/>
+        <Field type='text' name='name' placeholder='Username'/>
         {touched.name && errors.name && (
           <p className='error'>{errors.name}</p>
         )}
@@ -29,7 +30,7 @@ const SignUpForm = ({values,errors,touched,status}) => {
       </Form>
       {users.map(user => (
         <ul key={user.id}>
-          <li>Name: {user.name}</li>
+          <li>UserName: {user.name}</li>
           <li>Email: {user.email}</li>
           <li>Password: {user.password}</li>
         </ul>

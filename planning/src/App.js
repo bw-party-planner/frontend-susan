@@ -3,6 +3,7 @@ import SignUpPage from './Components/SignUpPage';
 import './App.css';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -11,6 +12,7 @@ function App() {
        </div>
        <div className='supage'>
        <SignUpPage />
+      
        </div>
     </div>
     
