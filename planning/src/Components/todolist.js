@@ -6,7 +6,7 @@ const TodoList = props => {
     <div className="todo-list">
       <h1>Susan ToDo List:</h1>
       {props.data.map(item => (
-        <Todo
+        <Partiestodo
           dispatch={props.dispatch}
           key={item.id}
           data={item}
