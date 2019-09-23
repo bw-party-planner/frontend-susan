@@ -25,7 +25,7 @@ const LoginForm = ({values,errors,touched,status}) => {
         {touched.password && errors.password && (
           <p className='error'>{errors.password}</p>
         )}
-        <button>Sign Up</button>
+        <button>Login</button>
       </Form>
       {users.map(user => (
         <ul key={user.id}>
