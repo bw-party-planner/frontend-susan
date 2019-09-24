@@ -1,6 +1,8 @@
 import React from 'react';
 import {Route,Link} from 'react-router-dom';
 import styled from 'styled-components';
+import SignUpPage from './SignUpPage';
+import Parties from './Parties';
 import '../index.css';
 
 const Ul = styled.ul`
@@ -25,14 +27,22 @@ function Nav() {
   return (
     <Navo>
      <Ul>
-       <Link to='/signup'>
+       <Link to='/signuppage'>
        <Li>Sign-Up/Login</Li>
        </Link>
-       <Li>nav</Li>
-       <Li>nav</Li>
-       <Li>nav</Li>
+       <Link to='/'>
+       <Li>My Party</Li>
+       </Link>
+       <Li>Categories</Li>
+       <Li>Shopping-List</Li>
      </Ul>
+     
+     <Route exact path='/sign-up' component={SignUpPage}/>
+     <Route exact path='/login' component={SignUpPage}/>
     </Navo>
+    
+    
+    
     
   );
 }
