@@ -1,11 +1,13 @@
-import React from "react";
+import { useContext } from "react";
+import { PicturesContext } from "./contexts/PicturesContext.js";
 
 const Pictures = () => {
   const { pictures } = useContext(PicturesContext);
 
   return (
     <div>
-      <h1>Hello!</h1>
+      <h1>Hello Welcome To Pictures!</h1>
+
       {pictures.map(pic => (
         <div>
           <h1>{pic.party}</h1>

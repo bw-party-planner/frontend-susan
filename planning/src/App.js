@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
 import "./App.css";
+
 import ShoppingCart from "./Components/ShoppingCart.js";
 import SignUpPage from "./Components/SignUpPage";
 import Nav from "./Components/Nav";
@@ -28,5 +28,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
