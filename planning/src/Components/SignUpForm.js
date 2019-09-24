@@ -28,13 +28,13 @@ const SignUpForm = ({values,errors,touched,status}) => {
         )}
         <button>Sign Up</button>
       </Form>
-      {users.map(user => (
+      {/* {users.map(user => (
         <ul key={user.id}>
           <li>UserName: {user.name}</li>
           <li>Email: {user.email}</li>
           <li>Password: {user.password}</li>
         </ul>
-      ))}
+      ))} */}
     </div>
   )
 }

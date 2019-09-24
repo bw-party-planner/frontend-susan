@@ -12,13 +12,7 @@ code {
     monospace;
 }
 
-.signup {
-  margin: 1%;
-  }
-  
-  .login{
-  margin:1%;
-  }
+
 
 
   Form {
@@ -70,3 +64,4 @@ code {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
  
+

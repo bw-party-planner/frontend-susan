@@ -19,6 +19,7 @@ class CategoryForm extends React.Component {
     
     event.preventDefault();
   }
+  
 
   render() {
     return (

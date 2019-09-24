@@ -8,7 +8,7 @@ import '../index.css';
 const Ul = styled.ul`
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin:0;
     padding-top: 10px;
     padding-bottom:10px;
@@ -34,6 +34,8 @@ function Nav() {
        <Li>My Party</Li>
        </Link>
        <Li>Categories</Li>
+       <Li>Pictures</Li>
+       <Li>To-do List</Li>
        <Li>Shopping-List</Li>
      </Ul>
      

@@ -24,12 +24,12 @@ const LoginForm = ({values,errors,touched,status}) => {
         )}
         <button>Login</button>
       </Form>
-      {users.map(user => (
+      {/* {users.map(user => (
         <ul key={user.id}>
           <li>Username: {user.name}</li>
           <li>Password: {user.password}</li>
         </ul>
-      ))}
+      ))} */}
     </div>
   )
 }
