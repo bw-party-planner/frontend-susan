@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Route,Link } from "react-router-dom";
 import "./App.css";
 import  ShoppingCart from "./Components/ShoppingCart.js";
-import  {PartyContext}  from "./Contexts/PartyContext.js";
+import  {PartyContext}  from "./Contexts/Partycontext.js";
+import  {CartContext}  from "./Contexts/CartContext.js";
+
 
 import SignUpPage from './Components/SignUpPage';
 import Nav from './Components/Nav';

@@ -8,19 +8,25 @@ import '../index.css';
 const SignUpB = styled.div`
 background: black;
 margin: 0;
-padding: 1%;
+padding: 3%;
+margin-left:20%;
+margin-right:20%;
+border-bottom:2px solid purple;
 `;
 
 const LoginB = styled.div`
 background: black;
-margin:0;
-padding: 1%;
+margin-left:20%;
+margin-right:20%;
+padding: 3%;
 `;
+
+
 
 
 function SignUpPage() {
 return(
-  <div>
+  <div className = 'sub'>
   <div className='suheader'>
        <h1>Sign-up/ Log-in</h1>
        </div>

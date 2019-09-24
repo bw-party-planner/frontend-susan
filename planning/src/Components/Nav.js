@@ -8,10 +8,12 @@ import '../index.css';
 const Ul = styled.ul`
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin:0;
     padding-top: 10px;
     padding-bottom:10px;
+    padding-right:0;
+    padding-left:0;
 `;
 const Li = styled.li`
   text-decoration: none;

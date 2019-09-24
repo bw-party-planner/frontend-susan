@@ -12,6 +12,22 @@ code {
     monospace;
 }
 
+button {
+  color: white;
+  borde: 1px solid purple;
+}
+
+.lbtn {
+  border:1px solid purple;
+  background: black;
+  margin-left: 5px;
+  border-radius: 5px;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left:10px;
+  padding-right:10px;
+}
+
 
 
 
@@ -63,5 +79,34 @@ code {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+p.error {
+  color: red;
+}
+
+.sub {
+  background-color: purple;
+  padding-top: 1px;
+}
+select,input {
+  background: white;
+}
+
+input {
+  color: white;
+  background: black;
+  border-radius: 4px;
+  margin-left:5px;
+}
+
+select {
+  color: white;
+  background:black;
+  border-radius: 2px;
+}
+
+label {
+  font-size: 1.2rem;
+}
  
 

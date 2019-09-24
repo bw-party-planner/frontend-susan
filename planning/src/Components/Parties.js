@@ -24,7 +24,7 @@ padding-right:1%;
 
 const PartyImg = styled.img`
 height: 55vh;
-width: 100vw;
+width: 85vw;
 border-radius: 10px;
 `;
 

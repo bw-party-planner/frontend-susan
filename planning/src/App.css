@@ -22,8 +22,11 @@
 }
 
 .suheader {
-  border: 1px solid black;
+  
+  border-bottom: 1px solid black;
   background: purple;
+  margin-left:20%;
+  margin-right:20%;
 }
 
 
