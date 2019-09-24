@@ -8,6 +8,9 @@ import '../index.css';
 function SignUpPage() {
 return(
   <div>
+  <div className='suheader'>
+       <h1>Sign-up/ Log-in</h1>
+       </div>
     <div className="signup">
     <Link to='/sign-up'>Sign Up</Link>
     </div>

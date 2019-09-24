@@ -1,5 +1,8 @@
+  
 import React from 'react';
 import SignUpPage from './Components/SignUpPage';
+import Nav from './Components/Nav';
+import {Route,Link} from 'react-router-dom';
 import './App.css';
 
 
@@ -7,12 +10,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div className='suheader'>
-       <h1>Sign-up/ Log-in</h1>
-       </div>
+      <Nav/>
        <div className='supage'>
-       <SignUpPage />
-      
+       <SignUpPage/>
        </div>
     </div>
     
