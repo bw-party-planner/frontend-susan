@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import LoginForm from "./LoginForm";
+import GetLogin from "./GetLogin.js";
 import RegisterForm from "./Register";
 import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
@@ -35,7 +35,7 @@ function Register(props) {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
-        props.history.push("/login");
+        props.history.push("/GetLogin");
       })
       .catch(err => {
         console.log(err);
@@ -60,17 +60,10 @@ function Register(props) {
           onChange={e => setPassword(e.target.value)}
           placeholder="password"
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="SubmitButton">
+          Connect!
+        </button>
       </form>
-
-      <RegisterB>
-        <Link to="/register">Register</Link>
-      </RegisterB>
-      <LoginB>
-        <Link to="/login">Login</Link>
-      </LoginB>
-      <Route exact path="/register" component={RegisterForm} />
-      <Route exact path="/login" component={LoginForm} />
     </div>
   );
 }
