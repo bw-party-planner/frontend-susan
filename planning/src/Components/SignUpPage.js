@@ -28,7 +28,7 @@ function SignUpPage() {
 return(
   <div className = 'sub'>
   <div className='suheader'>
-       <h1>Sign-up/ Log-in</h1>
+       <h1>Login</h1>
        </div>
     <SignUpB>
     <Link to='/sign-up'>Sign Up</Link>

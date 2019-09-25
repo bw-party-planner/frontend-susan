@@ -21,7 +21,7 @@ const Li = styled.li`
 `;
 
 const Navo = styled.div`
-background: black;
+background: #8e44ad;
 `;
 
 
@@ -30,15 +30,12 @@ function Nav() {
     <Navo>
      <Ul>
        <Link to='/signuppage'>
-       <Li>Sign-Up/Login</Li>
+       <Li>Home</Li>
        </Link>
        <Link to='/'>
-       <Li>My Party</Li>
+       <Li>Log out</Li>
        </Link>
-       <Li>Categories</Li>
-       <Li>Pictures</Li>
-       <Li>To-do List</Li>
-       <Li>Shopping-List</Li>
+       
      </Ul>
      
      <Route exact path='/sign-up' component={SignUpPage}/>

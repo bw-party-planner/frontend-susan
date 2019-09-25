@@ -39,6 +39,37 @@ align-items:center;
 text-align:center;
 `;
 
+
+// function GetParty(){
+//   const [infos, setInfos] =useState("");
+
+
+
+//  useEffect(()=> {
+//    axios.get(``)
+//    .then(response => {
+//      const infos = response.data;
+//      console.log(response.data);
+//      setInfos(infos);
+//    })
+//    .catch(error => {
+//     console.log("there is an error with axios", error);
+//    });
+//  },[]);
+//  return(
+//    <GetParty 
+//    id={infos.id}
+//    guest={infos.guests}
+//    theme={infos.theme}
+//    date={infos.date}
+//    budget={infos.budget}
+//    category_id={infos.category_id}
+//    />
+//  )
+// }
+
+
+
 function Parties(){
 return(
   <PartyB>
@@ -50,7 +81,7 @@ return(
     <PartyP>
     Find the party you are looking for below! Whether it be a Birthday Party, Garden Party, Dinner Party, Halloween Party, or even a Bachelor Party, we got it covered for you!
     </PartyP>
-    <CategoryForm/>
+    
   </div>
   </PartyB>
 );

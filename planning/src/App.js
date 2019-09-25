@@ -4,6 +4,7 @@ import "./App.css";
 import  ShoppingCart from "./Components/ShoppingCart.js";
 import  {PartyContext}  from "./Contexts/Partycontext.js";
 import  {CartContext}  from "./Contexts/CartContext.js";
+import GetLogin from './Components/GetLogin';
 
 
 import SignUpPage from './Components/SignUpPage';
@@ -15,14 +16,14 @@ function App() {
 
   return (
     <div className="App">
-
-      
-      <Nav/>
+    
+      <Route exact path='/' component={GetLogin}/>
+      <Route exact path='/navigation' component={Nav}/>
       <PartyContext.Provider>
         <CartContext.Provider value={cart}>
           <Route path="/cart" render={() => <ShoppingCart cart={cart} />} />
           <Route exact path='/signuppage' component={SignUpPage}/>
-          <Route exact path='/' component={Parties}/>
+          {/* <Route exact path='/' component={Parties}/> */}
         </CartContext.Provider>
       </PartyContext.Provider>
 
