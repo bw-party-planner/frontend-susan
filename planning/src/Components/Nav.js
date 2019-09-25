@@ -13,6 +13,14 @@ const Ul = styled.ul`
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0;
+  padding-left: 0;
 `;
 const Li = styled.li`
   text-decoration: none;
@@ -21,6 +29,8 @@ const Li = styled.li`
 
 const Navo = styled.div`
   background: black;
+
+  background: #8e44ad;
 `;
 
 function Nav() {
@@ -38,7 +48,16 @@ function Nav() {
         </Link>
         <Li>Shopping-List</Li>
       </Ul>
-
+      <Route exact path="/sign-up" component={SignUpPage} />
+      <Route exact path="/login" component={SignUpPage} />
+      <Ul>
+        <Link to="/signuppage">
+          <Li>Home</Li>
+        </Link>
+        <Link to="/">
+          <Li>Log out</Li>
+        </Link>
+      </Ul>
       <Route exact path="/sign-up" component={SignUpPage} />
       <Route exact path="/login" component={SignUpPage} />
     </Navo>

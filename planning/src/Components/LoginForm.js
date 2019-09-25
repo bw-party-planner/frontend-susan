@@ -22,14 +22,14 @@ const LoginForm = ({values,errors,touched,status}) => {
         {touched.password && errors.password && (
           <p className='error'>{errors.password}</p>
         )}
-        <button>Login</button>
+        <button className='lbtn'>Login</button>
       </Form>
-      {users.map(user => (
+      {/* {users.map(user => (
         <ul key={user.id}>
           <li>Username: {user.name}</li>
           <li>Password: {user.password}</li>
         </ul>
-      ))}
+      ))} */}
     </div>
   )
 }
