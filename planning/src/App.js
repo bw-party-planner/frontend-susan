@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-
+import {Route} from 'react-router-dom';
 import GetLogin from './Components/GetLogin';
 import ShoppingCart from "./Components/ShoppingCart.js";
 import SignUpPage from "./Components/SignUpPage";
@@ -19,7 +19,7 @@ function App() {
       <PartyContext.Provider>
         <CartContext.Provider value={cart}>
           <Route exact path="/signuppage" component={SignUpPage} />
-          <Route exact path="/" component={Parties} />
+          <Route exact path="/parties" component={Parties} />
           <Route
             exact
             path="/cart"
