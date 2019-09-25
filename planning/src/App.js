@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
+import GetLogin from './Components/GetLogin';
 import ShoppingCart from "./Components/ShoppingCart.js";
 import SignUpPage from "./Components/SignUpPage";
 import Nav from "./Components/Nav";
@@ -13,7 +14,8 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Route exact path='/' component={GetLogin}/>
+      <Route exact path='/navigation' component={Nav}/>
       <PartyContext.Provider>
         <CartContext.Provider value={cart}>
           <Route exact path="/signuppage" component={SignUpPage} />
@@ -23,6 +25,7 @@ function App() {
             path="/cart"
             render={() => <ShoppingCart cart={cart} />}
           />
+
         </CartContext.Provider>
       </PartyContext.Provider>
     </div>

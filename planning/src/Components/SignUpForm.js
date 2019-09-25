@@ -26,18 +26,21 @@ const SignUpForm = ({values,errors,touched,status}) => {
         {touched.password && errors.password && (
           <p className='error'>{errors.password}</p>
         )}
-        <button>Sign Up</button>
+        <button className='lbtn'>Sign Up</button>
       </Form>
-      {users.map(user => (
+      {/* {users.map(user => (
         <ul key={user.id}>
           <li>UserName: {user.name}</li>
           <li>Email: {user.email}</li>
           <li>Password: {user.password}</li>
         </ul>
-      ))}
+      ))} */}
     </div>
   )
 }
+
+
+
 
 const FormikSignUpForm = withFormik ({
   mapPropsToValues({name, email, password}){

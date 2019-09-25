@@ -12,6 +12,8 @@ const Ul = styled.ul`
     margin:0;
     padding-top: 10px;
     padding-bottom:10px;
+    padding-right:0;
+    padding-left:0;
 `;
 const Li = styled.li`
   text-decoration: none;
@@ -19,7 +21,7 @@ const Li = styled.li`
 `;
 
 const Navo = styled.div`
-background: black;
+background: #8e44ad;
 `;
 
 
@@ -28,13 +30,12 @@ function Nav() {
     <Navo>
      <Ul>
        <Link to='/signuppage'>
-       <Li>Sign-Up/Login</Li>
+       <Li>Home</Li>
        </Link>
        <Link to='/'>
-       <Li>My Party</Li>
+       <Li>Log out</Li>
        </Link>
-       <Li>Categories</Li>
-       <Li>Shopping-List</Li>
+       
      </Ul>
      
      <Route exact path='/sign-up' component={SignUpPage}/>
