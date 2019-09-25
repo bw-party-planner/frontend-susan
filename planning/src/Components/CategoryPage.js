@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import axios from 'axios';
 import CategoryForm from './CategoryForm';
+
+
 export default function CategoryPage() {
   const [infos, setInfos] = useState('');
   useEffect(()=> {

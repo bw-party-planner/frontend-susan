@@ -10,6 +10,10 @@ import PrivateRoute from './Components/PrivateRoute';
 import Catergories from './parties/Catergories';
 import { PartyContext } from './Contexts/Partycontext.js';
 import { CartContext } from './Contexts/CartContext.js';
+
+
+
+
 function App() {
  const [cart, setCart] = useState([]);
  return (
