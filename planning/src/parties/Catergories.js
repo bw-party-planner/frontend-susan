@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import axiosWithAuth from "../utils/axiosWithAuth.js";
 
 class Catergories extends React.Component {
   constructor() {
@@ -6,6 +8,53 @@ class Catergories extends React.Component {
     this.newValue = {};
   }
 
+  handleSubmit = e => {
+    e.preventDefault();
+    const baseURL = "https://mypartyplanner.herokuapp.com/api";
+    axios
+      .post(`${baseURL}/categories`)
+      .then(res => {
+        console.log(res);
+        localStorage.setItem("token", res.data.token);
+        this.props.history.push("catergories/:id");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+  putMessage = quote => {
+    axios
+      .put("https://mypartyplanner.herokuapp.com/api/categories/:id", quote)
+      .then(response => {
+        this.setState({
+          putSuccessMessage: response.data.successMessage,
+          putError: "You need a Party!"
+        });
+      })
+      .catch(err => {
+        this.setState({
+          putSuccessMessage: "You have successfully chosen a party!",
+          putError: err.response.data.Error
+        });
+      });
+  };
+  handleSubmit = e => {
+    e.preventDefault();
+    const deleteCatergory = () => {
+      axiosWithAuth()
+        .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
+        .then(res => {
+          console.log(res);
+          axiosWithAuth()
+            .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
+            .then(res => {
+              deleteCatergory(res.data);
+            })
+            .catch(err => console.log(err.response));
+        })
+        .catch(err => console.log(err.response));
+    };
+  };
   render() {
     return (
       <div className="buttons">
