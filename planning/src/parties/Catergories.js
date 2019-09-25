@@ -12,6 +12,28 @@ class Catergories extends React.Component {
     e.preventDefault();
     const baseURL = "https://mypartyplanner.herokuapp.com/api";
     axios
+      .post(`${baseURL}/catgories`)
+      .then(res => {
+        console.log(res);
+        localStorage.setItem("token", res.data.token);
+        this.props.history.push("catergories/:id");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const baseURL = "https://mypartyplanner.herokuapp.com/api";
+    axios
       .post(`${baseURL}/categories`)
       .then(res => {
         console.log(res);
