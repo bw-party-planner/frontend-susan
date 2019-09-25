@@ -33,8 +33,8 @@ function App() {
              path='/register'
              render={props => <Register {...props} />}
            />{' '}
-           {<PrivateRoute exact path='/catergories' component={Catergories} />}
-           <Route exact path='/catergories' component={Catergories} />
+           <PrivateRoute exact path='/catergories' component={Catergories} />
+           {/* <Route exact path='/catergories' component={Catergories} /> */}
            <Route exact path='/parties' component={Parties} />
            <Route
              exact
