@@ -1,8 +1,6 @@
 import React from "react";
-import axios from "axios";
 
-
-class ShoppingList extends React.Component {
+class ToDoList extends React.Component {
   constructor() {
     super();
     this.newValue = {};
@@ -11,11 +9,11 @@ class ShoppingList extends React.Component {
     e.preventDefault();
     const baseURL = "https://mypartyplanner.herokuapp.com/api";
     axios
-      .post(`${baseURL}/api/parties/:id/shoppingList`)
+      .post(`${baseURL}/api/parties/:id/todoList`)
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
-        this.props.history.push("parties/:id/shoppingList");
+        this.props.history.push("parties/:id/todoList");
       })
       .catch(err => {
         console.log(err);
@@ -24,7 +22,7 @@ class ShoppingList extends React.Component {
   putMessage = quote => {
     axios
       .put(
-        "https://mypartyplanner.herokuapp.com/api/parties/:id/shoppingList/:itemId",
+        "https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId",
         quote
       )
       .then(response => {
@@ -45,13 +43,13 @@ class ShoppingList extends React.Component {
     const deleteItem = () => {
       axiosWithAuth()
         .delete(
-          `https://mypartyplanner.herokuapp.com/api/parties/:id/shoppingList/:itemId`
+          `https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId`
         )
         .then(res => {
           console.log(res);
           axiosWithAuth()
             .get(
-              "https://mypartyplanner.herokuapp.com/api/parties/:id/shoppingList/:itemId"
+              "https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId"
             )
             .then(res => {
               deleteItem(res.data);
@@ -64,11 +62,10 @@ class ShoppingList extends React.Component {
 
   render() {
     return (
-      <div className="shoppinglist">
-        <div className="shopping-cart_item">
+      <div className="TodoList">
+        <div className="Todoitem">
           <h1>{props.item}</h1>
-          <div key={props.id}>
-            <p>$ {props.price}</p>
+          <div key={props.task}>
             <button onClick={() => props.deleteItem(props.id)}>
               Remove from cart
             </button>
@@ -79,4 +76,4 @@ class ShoppingList extends React.Component {
     );
   }
 }
-export default ShoppingList;
+export default ToDoList;
