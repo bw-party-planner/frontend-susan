@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 export default function CategoryPage() {
   const [infos, setInfos] = useState([]);
   useEffect(() => {
-    axios
+    axiosWithAuth()
       .get("https://mypartyplanner.herokuapp.com/api/categories")
       .then(response => {
         const info = response.data;

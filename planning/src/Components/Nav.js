@@ -3,7 +3,6 @@ import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import SignUpPage from "./Register";
 import Catergories from "../parties/Catergories";
-
 import "../index.css";
 
 const Ul = styled.ul`
@@ -39,9 +38,6 @@ function Nav() {
       <Ul>
         <Link to="/signuppage">
           <Li>Sign-Up/Login</Li>
-        </Link>
-        <Link to="/">
-          <Li>My Party</Li>
         </Link>
         <Link to="/Catergories">
           <Li>Categories</Li>
