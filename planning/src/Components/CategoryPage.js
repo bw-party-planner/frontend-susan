@@ -18,7 +18,7 @@ export default function CategoryPage() {
   },[]);
   return (
     <div>
-      <h1>jnjkn</h1>
+      <h1></h1>
     </div>
   )
 }
