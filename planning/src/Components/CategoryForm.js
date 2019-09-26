@@ -10,6 +10,7 @@ class CategoryForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleSubmit = e => {
     e.preventDefault();
     const baseURL = "https://mypartyplanner.herokuapp.com/api";
