@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import axiosWithAuth from "../utils/axiosWithAuth.js";
 import CategoryPage from "../Components/CategoryPage";
+
+import './Catergories.css';
+
 import CatergoryContext from "../Contexts/CatergoryContext.js";
+
 
 class Catergories extends React.Component {
   constructor() {
@@ -47,7 +51,9 @@ class Catergories extends React.Component {
         .then(res => {
           console.log(res);
           axiosWithAuth()
+
             .get("https://mypartyplanner.herokuapp.com/api/categories/:id")
+
 
             .then(res => {
               console.log(res);
