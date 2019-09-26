@@ -49,7 +49,7 @@ const ImgW = styled.div`
 // }
 
 
-function Parties() {
+function Addparty() {
   return (
      <div>
       <ImgW>
