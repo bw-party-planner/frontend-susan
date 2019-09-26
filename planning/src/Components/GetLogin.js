@@ -17,7 +17,7 @@ const GetLogin = props => {
     axios
       .post("https://mypartyplanner.herokuapp.com/api/auth/login", logini)
       .then(response => {
-        // console.log(response);
+        console.log(response);
         localStorage.setItem("token", response.data.payload);
         props.history.push("/catergories");
       })
