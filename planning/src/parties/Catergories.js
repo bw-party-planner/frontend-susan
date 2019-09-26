@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import axiosWithAuth from "../utils/axiosWithAuth.js";
 import CategoryPage from "../Components/CategoryPage";
+import './Catergories.css';
 class Catergories extends React.Component {
   constructor() {
     super();
@@ -45,7 +46,7 @@ class Catergories extends React.Component {
         .then(res => {
           console.log(res);
           axiosWithAuth()
-            .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
+            .get("https://mypartyplanner.herokuapp.com/api/categories/:id")
             .then(res => {
               deleteCatergory(res.data);
             })

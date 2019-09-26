@@ -37,7 +37,7 @@ const ImgW = styled.div`
   text-align: center;
 `;
 
-// function GetParty(){
+//  export function GetParty(){
 //   const [infos, setInfos] =useState("");
 
 //  useEffect(()=> {
