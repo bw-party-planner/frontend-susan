@@ -3,7 +3,7 @@ import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import SignUpPage from "./Register";
 import Catergories from "../parties/Catergories";
-import Parties from "./Parties";
+
 import "../index.css";
 
 const Ul = styled.ul`

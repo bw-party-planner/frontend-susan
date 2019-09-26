@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import CategoryForm from "./CategoryForm";
 import "../index.css";
 
 const PartyB = styled.div`
@@ -82,4 +81,4 @@ function Parties() {
   );
 }
 
-export default Parties;
+export default Addparty;
