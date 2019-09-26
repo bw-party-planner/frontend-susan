@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import axiosWithAuth from "../utils/axiosWithAuth.js";
-import CategoryForm from "../Components/CategoryForm";
 import CategoryPage from "../Components/CategoryPage";
 class Catergories extends React.Component {
   constructor() {
@@ -74,7 +73,6 @@ class Catergories extends React.Component {
         <button className="Add-Party" onClick={this.AddPartyButton}>
           Add Party
         </button>
-        <CategoryForm />
         <CategoryPage />
       </div>
     );

@@ -4,11 +4,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import GetLogin from "./Components/GetLogin";
 import Register from "./Components/Register";
 import Nav from "./Components/Nav";
-import Parties from "./Components/Parties";
 import PrivateRoute from "./Components/PrivateRoute";
 import Catergories from "./parties/Catergories";
 import { PartyContext } from "./Contexts/Partycontext.js";
-import { CartContext } from "./Contexts/CartContext.js";
+import  {CatergoryContext } from "./Contexts/CatergoryContext.js";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -18,7 +17,7 @@ function App() {
         <Route exact path="/" component={GetLogin} />
         <Route exact path="/navigation" component={Nav} />
         <PartyContext.Provider>
-          <CartContext.Provider value={cart}>
+          <CatergoryContext.Provider value={cart}>
             <Route
               exact
               path="/getlogin"
@@ -31,8 +30,7 @@ function App() {
             />{" "}
             <PrivateRoute exact path="/catergories" component={Catergories} />
             {/* <Route exact path='/catergories' component={Catergories} /> */}
-            <Route exact path="/parties" component={Parties} />
-          </CartContext.Provider>
+          </CatergoryContext.Provider>
         </PartyContext.Provider>
       </Router>
     </div>
