@@ -1,3 +1,4 @@
+  
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -17,10 +18,8 @@ const GetLogin = props => {
     axios
       .post("https://mypartyplanner.herokuapp.com/api/auth/login", logini)
       .then(response => {
-        console.log(response);
         localStorage.setItem("token", response.data.token);
-        console.log("token", response.data.token);
-        props.history.push("/catergories");
+        props.history.push("./CategoryPage.js");
       })
       .catch(err => console.log("error in handlesSub", err.response));
     setLogini({ username: "", password: "" });

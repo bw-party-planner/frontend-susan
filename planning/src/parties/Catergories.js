@@ -3,12 +3,12 @@ import axios from "axios";
 import axiosWithAuth from "../utils/axiosWithAuth.js";
 import CategoryPage from "../Components/CategoryPage";
 
-import './Catergories.css';
+import './Categories.css';
 
-import CatergoryContext from "../Contexts/CatergoryContext.js";
+import CategoryContext from "../Contexts/CategoryContext.js";
 
 
-class Catergories extends React.Component {
+class Categories extends React.Component {
   constructor() {
     super();
     this.newValue = {};
@@ -20,7 +20,7 @@ class Catergories extends React.Component {
       .post(`${baseURL}/categories`)
       .then(res => {
         console.log(res);
-        this.props.history.push("catergories/:id");
+        this.props.history.push("Categories/:id");
       })
       .catch(err => {
         console.log(err);
@@ -45,7 +45,7 @@ class Catergories extends React.Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    const deleteCatergory = () => {
+    const deletecategory = () => {
       axiosWithAuth()
         .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
         .then(res => {
@@ -57,7 +57,7 @@ class Catergories extends React.Component {
 
             .then(res => {
               console.log(res);
-              deleteCatergory(res.data);
+              deletecategory(res.data);
             })
             .catch(err => console.log(err.response));
         })
@@ -67,7 +67,7 @@ class Catergories extends React.Component {
   render() {
     return (
       <div className="buttons">
-        <h1>Catergories</h1>
+        <h1>Categories</h1>
         <button className="Birthday-Party" onClick={this.BirthdayPartyButton}>
           Birthday Party
         </button>
@@ -88,5 +88,5 @@ class Catergories extends React.Component {
     );
   }
 }
-export default Catergories;
+export default Categories;
 // Close the dropdown menu if the user clicks outside of it
