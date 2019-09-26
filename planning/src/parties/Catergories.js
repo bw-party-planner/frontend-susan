@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import axiosWithAuth from "../utils/axiosWithAuth.js";
 import CategoryPage from "../Components/CategoryPage";
+
 import './Catergories.css';
+
+import CatergoryContext from "../Contexts/CatergoryContext.js";
+
+
 class Catergories extends React.Component {
   constructor() {
     super();
@@ -11,11 +16,10 @@ class Catergories extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const baseURL = "https://mypartyplanner.herokuapp.com/api";
-    axios
+    axiosWithAuth
       .post(`${baseURL}/categories`)
       .then(res => {
         console.log(res);
-        localStorage.setItem("token", res.data.token);
         this.props.history.push("catergories/:id");
       })
       .catch(err => {
@@ -26,6 +30,7 @@ class Catergories extends React.Component {
     axios
       .put("https://mypartyplanner.herokuapp.com/api/categories/:id", quote)
       .then(response => {
+        console.log(response);
         this.setState({
           putSuccessMessage: response.data.successMessage,
           putError: "You need a Party!"
@@ -46,8 +51,12 @@ class Catergories extends React.Component {
         .then(res => {
           console.log(res);
           axiosWithAuth()
-            .get("https://mypartyplanner.herokuapp.com/api/categories/:id")
+
+            .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
+
+
             .then(res => {
+              console.log(res);
               deleteCatergory(res.data);
             })
             .catch(err => console.log(err.response));

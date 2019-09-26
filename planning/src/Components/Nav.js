@@ -40,9 +40,6 @@ function Nav() {
         <Link to="/signuppage">
           <Li>Sign-Up/Login</Li>
         </Link>
-        <Link to="/">
-          <Li>My Party</Li>
-        </Link>
         <Link to="/Catergories">
           <Li>Categories</Li>
         </Link>
