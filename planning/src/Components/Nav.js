@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import SignUpPage from "./Register";
-import Catergories from "../parties/Catergories";
+import CategoryPage from "../Components/CategoryPage.js";
 
 import "../index.css";
 
@@ -40,8 +40,8 @@ function Nav() {
         <Link to="/signuppage">
           <Li>Sign-Up/Login</Li>
         </Link>
-        <Link to="/Catergories">
-          <Li>Categories</Li>
+        <Link to="../Components/CategoryPage">
+          <Li>Categorypage</Li>
         </Link>
         <Li>Shopping-List</Li>
       </Ul>

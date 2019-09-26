@@ -5,9 +5,9 @@ import GetLogin from "./Components/GetLogin";
 import Register from "./Components/Register";
 import Nav from "./Components/Nav";
 import PrivateRoute from "./Components/PrivateRoute";
-import Catergories from "./parties/Catergories";
+import { CategoryPage } from "./Components/CategoryPage";
 import { PartyContext } from "./Contexts/Partycontext.js";
-import  {CatergoryContext } from "./Contexts/CatergoryContext.js";
+import { CategoryContext } from "./Contexts/CategoryContext.js";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/" component={GetLogin} />
         <Route exact path="/navigation" component={Nav} />
         <PartyContext.Provider>
-          <CatergoryContext.Provider value={cart}>
+          <CategoryContext.Provider value={cart}>
             <Route
               exact
               path="/getlogin"
@@ -28,9 +28,13 @@ function App() {
               path="/register"
               render={props => <Register {...props} />}
             />{" "}
-            <PrivateRoute exact path="/catergories" component={Catergories} />
-            {/* <Route exact path='/catergories' component={Catergories} /> */}
-          </CatergoryContext.Provider>
+            <PrivateRoute
+              exact
+              path="./Components/CategoryPage"
+              component={CategoryPage}
+            />
+            {/* <Route exact path='./Components/CategoryPage' component={CategoryPage} /> */}
+          </CategoryContext.Provider>
         </PartyContext.Provider>
       </Router>
     </div>
