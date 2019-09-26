@@ -108,5 +108,10 @@ select {
 label {
   font-size: 1.2rem;
 }
+
+.btncat{
+  padding: .5%;
+  width: 10%;
+}
  
 

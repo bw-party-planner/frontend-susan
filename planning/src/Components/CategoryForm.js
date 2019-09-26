@@ -46,7 +46,9 @@ class CategoryForm extends React.Component {
             <option value="mango">Bachelor Party</option>
           </select>
         </label>
-        <input type="submit" value="Submit" />
+        <div className='btncatwrapper'>
+        <input className="btncat" type="submit" value="Submit" />
+        </div>
       </form>
     );
   }
