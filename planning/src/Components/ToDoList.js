@@ -28,7 +28,6 @@ class ToDoList extends React.Component {
   render(props) {
     return (
       <div>
-        <h1>Hello!</h1>
         <ToDoLists />
       </div>
     );

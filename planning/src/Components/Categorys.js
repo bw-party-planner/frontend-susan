@@ -10,7 +10,6 @@ const Categorys = () => {
 
   return (
     <div>
-      <h1>Hello!</h1>
       {category.map(objects => (
         <div>
           <h2>{id.objects}</h2>

@@ -10,8 +10,8 @@ export function ToDoLists() {
   const [ToDoList, setToDoList] = useState([]);
 
   useEffect(() => {
-    axiosWithAuth()
-      .fetch(
+    axios
+      .get(
         "https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId"
       )
       .then(response => {

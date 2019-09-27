@@ -26,7 +26,7 @@ export function PartyData() {
   const [infos, setInfos] = useState("");
   useEffect(() => {
     axiosWithAuth()
-      .fetch(`https://mypartyplanner.herokuapp.com/api/parties/:id`)
+      .get(`https://mypartyplanner.herokuapp.com/api/parties/:id`)
       .then(response => {
         console.log(response.data);
       })
