@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
 class ShoppingList extends React.Component {
   constructor() {
     super();
-    this.newValue = {};
+    this.state = {
+      shoppinglist: []
+    };
   }
-  handleSubmit = e => {
-    e.preventDefault(this.props);
+
+  componentDidMount() {
+    const handleSubmit = e => {
+      e.preventDefault(this.props);
+      const baseURL = "https://mypartyplanner.herokuapp.com/api";
+      axiosWithAuth()
+        .post(`${baseURL}/api/parties/:id/shoppingList`)
+        .then(res => {
+          console.log(res);
+          localStorage.setItem("token", res.data.token);
+          this.props.history.push("parties/:id/ShoppingList");
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    };
+
     const baseURL = "https://mypartyplanner.herokuapp.com/api";
-    axiosWithAuth
+    axiosWithAuth()
       .post(`${baseURL}/api/parties/:id/shoppingList`)
       .then(res => {
         console.log(res);
@@ -20,8 +37,7 @@ class ShoppingList extends React.Component {
       .catch(err => {
         console.log(err);
       });
-    window.location.reload();
-  };
+  }
   putMessage = quote => {
     axios
       .put(
@@ -63,19 +79,16 @@ class ShoppingList extends React.Component {
     };
   };
 
-  render(props) {
+  render(item) {
     return (
       <div className="shoppinglist">
         <div className="shopping-cart_item">
-          <h1>{this.props.item}</h1>
-          <div key={props.id}>
-            <p>$ {props.price}</p>
-            <button onClick={() => props.deleteItem(props.id)}>
-              Remove from cart
-            </button>
-          </div>
+          <h1>{this.props.data}Shopping is Fun!</h1>
+          <p>$ {item}</p>
+          <button onClick={props => props.deleteItem(props.data)}>
+            Remove from cart
+          </button>
         </div>
-        ); };
       </div>
     );
   }

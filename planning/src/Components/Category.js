@@ -45,7 +45,7 @@ export class Categories extends React.Component {
         });
     };
 
-    axiosWithAuth()
+    axios
       .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
       .then(res => {
         console.log(res);
