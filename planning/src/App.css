@@ -32,3 +32,23 @@
 body {
   background-color: purple;
 }
+
+.inputregister {
+  width: 30%;
+  height: 10%;
+  border: 2px solid hotpink;
+  margin-top: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  background-color: black;
+  color: white;
+  border: 2px solid hotpink;
+}

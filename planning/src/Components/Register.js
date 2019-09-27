@@ -46,24 +46,27 @@ function Register(props) {
     <div className="RegisterForm">
       <form onSubmit={handleSubmit}>
         <p>Register</p>
-        <input
-          value={username}
-          name="username"
-          type="text"
-          onChange={e => setUsername(e.target.value)}
-          placeholder="username"
-        />
-        <input
-          value={password}
-          name="password"
-          type="password"
-          onChange={e => setPassword(e.target.value)}
-          placeholder="password"
-        />
-        <button type="submit" className="SubmitButton">
+        <div className="inputregister">
+          <input
+            value={username}
+            name="username"
+            type="text"
+            onChange={e => setUsername(e.target.value)}
+            placeholder="username"
+          />
+          <input
+            value={password}
+            name="password"
+            type="password"
+            onChange={e => setPassword(e.target.value)}
+            placeholder="password"
+          />
+        </div>
+        <button type="submit" className="SubmitButtonregister">
           Connect!
         </button>
       </form>
+      <img src={require("../imgs/register.jpg")} />
     </div>
   );
 }

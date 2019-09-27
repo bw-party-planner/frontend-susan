@@ -46,22 +46,18 @@ function Nav() {
           <Li>Categorypage</Li>
         </Link>
         <Li>Shopping-List</Li>
+        <Link>
+          <Li>ToDoList</Li>
+        </Link>
       </Ul>
       <Route exact path="/sign-up" component={SignUpPage} />
       <Route exact path="/login" component={SignUpPage} />
-      <Route exact path="/Party" component={Party} />
       <Ul>
         <Link to="/signuppage">
           <Li>Home</Li>
         </Link>
-        <Link to="/Party">
-          <Li>Party</Li>
-        </Link>
         <Link to="/">
           <Li>Log out</Li>
-        </Link>
-        <Link to="/">
-          <Li>ToDoList</Li>
         </Link>
       </Ul>
       <Route exact path="/sign-up" component={SignUpPage} />
