@@ -8,7 +8,7 @@ import PrivateRoute from "./Components/PrivateRoute";
 import { CategoryPage } from "./Components/CategoryPage";
 import { PartyContext } from "./Contexts/Partycontext.js";
 import { CategoryContext } from "./Contexts/CategoryContext.js";
-import Categories from "./Components/Categories";
+import Categories from "./Components/Category";
 
 function App() {
   const [cart, setCart] = useState([]);

@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import axios from "axios";
-import axiosWithAuth from "../utils/axiosWithAuth.js";
-import CategoryPage from "../Components/CategoryPage";
-
-import CategoryContext from "../Contexts/CategoryContext.js";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Route } from "react-router-dom";
+import axiosWithAuth from "../utils/axiosWithAuth";
+import CategoryPage from "./CategoryPage.js";
 
 export class Categories extends React.Component {
   constructor() {
