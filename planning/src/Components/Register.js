@@ -44,6 +44,7 @@ function Register(props) {
 
   return (
     <div className="RegisterForm">
+
       <form onSubmit={handleSubmit}>
         <p>Register</p>
         <div className="inputregister">
@@ -63,6 +64,25 @@ function Register(props) {
           />
         </div>
         <button type="submit" className="SubmitButtonregister">
+
+      <form className="formregister" onSubmit={handleSubmit}>
+        <p className="regtitle">Register</p>
+        <input className='inputregister'
+          value={username}
+          name="username"
+          type="text"
+          onChange={e => setUsername(e.target.value)}
+          placeholder="username"
+        />
+        <input className='inputregister'
+          value={password}
+          name="password"
+          type="password"
+          onChange={e => setPassword(e.target.value)}
+          placeholder="password"
+        />
+        <button type="submit" className="SubmitButton">
+
           Connect!
         </button>
       </form>
