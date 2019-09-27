@@ -56,7 +56,7 @@ class ShoppingList extends React.Component {
           console.log(res);
 
           axios
-            .get(
+            .fetch(
               "https://mypartyplanner.herokuapp.com/api/parties/:id/shoppingList/:itemId"
             )
             .then(res => {

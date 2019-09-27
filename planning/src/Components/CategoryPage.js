@@ -9,10 +9,9 @@ export function CategoryPage() {
   const { Category } = useContext(CategoryContext);
   const [categories, setcategories] = useState([]);
   const [deleteCategory, setdeletecategory] = useState([]);
+  const [CategoriesCards, setCategoriesCards] = useState([]);
 
-
-
-     useEffect(() => {
+  useEffect(() => {
     axiosWithAuth()
       .get("https://mypartyplanner.herokuapp.com/api/categories")
       .then(response => {
@@ -20,43 +19,19 @@ export function CategoryPage() {
       })
       .catch(error => {
         console.log("there is an error with axios", error);
-     });
+      });
   }, []);
 
   return (
     <div>
       <h1>Welcome</h1>
-      <button
-        className="Birthday-Party"
-        onClick={props => this.BirthdayPartyButton}
-      >
-        Birthday Party
-      </button>
-      <button
-        className="Halloween-Party"
-        onClick={props => this.HalloweenPartyButton}
-      >
-        Halloween Party
-      </button>
-      <button
-        className="Garden-Party"
-        onClick={props => this.GarndenPartyButton}
-      >
-        Garden Party
-      </button>
-      <button
-        className="Bachelor-Party"
-        onClick={props => this.BachelorPartyButton}
-      >
-        Bachelor Party
-      </button>
-      <button className="Add-Party" onClick={props => Addparty}>
-        Add Party
-      </button>
       <span
         className="delete"
         onClick={() => deleteCategory(categories)}
       ></span>
+      {categories.map((id, categories) => {
+        return <categories key={id} categories={categories} />;
+      })}
     </div>
   );
 }

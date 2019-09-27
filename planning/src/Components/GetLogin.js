@@ -19,7 +19,7 @@ const GetLogin = props => {
       .post("https://mypartyplanner.herokuapp.com/api/auth/login", logini)
       .then(response => {
         localStorage.setItem("token", response.data.token);
-        props.history.push("./Party");
+        props.history.push("./bubbles");
       })
       .catch(err => console.log("error in handlesSub", err.response));
     setLogini({ username: "", password: "" });

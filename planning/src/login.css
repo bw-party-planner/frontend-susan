@@ -17,7 +17,7 @@ body{
   height: 580px;
   padding: 80px 40px;
   border-radius: 10px;
-  border:solid hot pink;
+  border:2px solid hotpink;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -102,13 +102,17 @@ body{
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid red;
+  border: 1px solid hotpink;
   height: 100vh;
   border: 10px solid rgb(122, 6, 139);
   width: 26%;
   height: 37vh;
   margin-top: 150px;
   border-radius: 10px;
+}
+
+div .loginContainer {
+  border: 1px solid hotpink;
 }
 
 form {
@@ -133,7 +137,7 @@ input {
 .SubmitButton {
   color: black;
   background: gray;
-  border: 2px solid gray;
+  border: 2px solid hotpink;
   border-radius: 5px;
   width: 85px;
   display: flex;
@@ -150,20 +154,34 @@ input {
 }
 
 
+.SubmitButtonregister {
+  color: black;
+  background: gray;
+  border: 2px solid hotpink;
+
+
 .SubmitButtonn {
   margin-left:75px;
   color: black;
   background:gray;
   border: 2px solid gray;
+
   border-radius: 5px;
   width: 85px;
   display: flex;
   justify-content: center;
   text-align: center;
+
+  margin-left: 0;
+  padding: 4px;
+  margin-bottom: 8px;
+}
+
   padding: 4px;
   margin-bottom: 8px;
 }
 
 
 }
+
 

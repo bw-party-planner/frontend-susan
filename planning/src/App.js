@@ -9,9 +9,11 @@ import { CategoryPage } from "./Components/CategoryPage";
 import { PartyContext } from "./Contexts/Partycontext.js";
 import { CategoryContext } from "./Contexts/CategoryContext.js";
 import Party from "./Components/Party.js";
+import BubblePage from "./Components/BubblePage.js";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [colorList, setColorList] = useState([]);
   return (
     <div className="App">
       <Router>
@@ -29,7 +31,7 @@ function App() {
               path="/register"
               render={props => <Register {...props} />}
             />{" "}
-            <PrivateRoute exact path="/Party" component={Party} />
+            {<PrivateRoute exact path="/bubbles" component={BubblePage} />}
             {/* <Route exact path='./Components/Categories' component={Categories} /> */}
           </CategoryContext.Provider>
         </PartyContext.Provider>

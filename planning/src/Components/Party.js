@@ -6,6 +6,8 @@ import ToDoList from "./ToDoList.js";
 import ShoppingList from "./ShoppingList.js";
 import Nav from "./Nav.js";
 import Categories from "./Category";
+import BubblePage from "./BubblePage.js";
+
 function Party() {
   const [infos, setInfos] = useState("");
 
@@ -13,9 +15,7 @@ function Party() {
     axiosWithAuth()
       .get(`https://mypartyplanner.herokuapp.com/api/parties`)
       .then(response => {
-        const infos = response.data;
         console.log(response.data);
-        setInfos(infos);
       })
       .catch(error => {
         console.log("there is an error with axios", error);

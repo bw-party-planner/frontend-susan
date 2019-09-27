@@ -65,30 +65,35 @@ export class Category extends React.Component {
       <div className="buttons">
         <h1>Catergories</h1>
         <button
+          id="1"
           className="Birthday-Party"
           onClick={() => props.addItem(props.button)}
         >
           Birthday Party
         </button>
         <button
+          id="2"
           className="Halloween-Party"
           onClick={() => props.addItem(props.button)}
         >
           Halloween Party
         </button>
         <button
+          id="3"
           className="Garden-Party"
           onClick={() => props.addItem(props.button)}
         >
           Garden Party
         </button>
         <button
+          id="4"
           className="Bachelor-Party"
           onClick={() => props.addItem(props.button)}
         >
           Bachelor Party
         </button>
         <button
+          id="5"
           className="Add-Party"
           onClick={() => props.addItem(props.button)}
         >

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "../index.css";
+import axiosWithAuth from "../utils/axiosWithAuth";
+import axios from "axios";
 
 const PartyImg = styled.img`
   height: 55vh;
@@ -22,11 +24,17 @@ const ImgW = styled.div`
 
 export function PartyData() {
   const [infos, setInfos] = useState("");
+  useEffect(() => {
+    axiosWithAuth()
+      .get(`https://mypartyplanner.herokuapp.com/api/parties/:id`)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log("there is an error with axios", error);
+      });
+  }, []);
 
-  return <div></div>;
-}
-
-function Addparty() {
   return (
     <div>
       <ImgW>
@@ -35,5 +43,4 @@ function Addparty() {
     </div>
   );
 }
-
 export default PartyData;
