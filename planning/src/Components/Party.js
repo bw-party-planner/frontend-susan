@@ -25,6 +25,7 @@ function Party() {
       <h1>Welcome to the Party Page </h1>
 
       <Categories />
+      <ToDoList/>
     </div>
   );
 }

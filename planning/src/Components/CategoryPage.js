@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect }from "react";
 import { BrowserRouter as Route } from "react-router-dom";
+import { useContext } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import Addparty from "./Addparty";
+import { CategoryContext } from "../Contexts/CategoryContext.js";
 
 export function CategoryPage() {
+  const { Category } = useContext(CategoryContext);
   const [categories, setcategories] = useState([]);
   const [deleteCategory, setdeletecategory] = useState([]);
   useEffect(() => {
