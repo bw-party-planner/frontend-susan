@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
 import axiosWithAuth from "../utils/axiosWithAuth";
+import axios from "axios";
 import CategoryPage from "./CategoryPage.js";
+import Categorys from "./Categorys.js";
 
 export class Categories extends React.Component {
   constructor() {
@@ -19,9 +21,11 @@ export class Categories extends React.Component {
       .catch(err => {
         console.log(err);
       });
+    window.location.reload();
   };
+
   putMessage = quote => {
-    axiosWithAuth()
+    axios
       .put("https://mypartyplanner.herokuapp.com/api/categories/:id", quote)
       .then(response => {
         console.log(response);
@@ -40,11 +44,11 @@ export class Categories extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const deleteCatergory = () => {
-      axiosWithAuth()
+      axios
         .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
         .then(res => {
           console.log(res);
-          axiosWithAuth()
+          axios
             .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
 
             .then(res => {
@@ -56,26 +60,42 @@ export class Categories extends React.Component {
         .catch(err => console.log(err.response));
     };
   };
-  render() {
+  render(props) {
     return (
       <div className="buttons">
         <h1>Catergories</h1>
-        <button className="Birthday-Party" onClick={this.BirthdayPartyButton}>
+        <button
+          className="Birthday-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Birthday Party
         </button>
-        <button className="Halloween-Party" onClick={this.HalloweenPartyButton}>
+        <button
+          className="Halloween-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Halloween Party
         </button>
-        <button className="Garden-Party" onClick={this.GarndenPartyButton}>
+        <button
+          className="Garden-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Garden Party
         </button>
-        <button className="Bachelor-Party" onClick={this.BachelorPartyButton}>
+        <button
+          className="Bachelor-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Bachelor Party
         </button>
-        <button className="Add-Party" onClick={this.AddPartyButton}>
+        <button
+          className="Add-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Add Party
         </button>
         <CategoryPage />
+        <Categorys />
       </div>
     );
   }

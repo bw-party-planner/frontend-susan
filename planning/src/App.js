@@ -8,7 +8,7 @@ import PrivateRoute from "./Components/PrivateRoute";
 import { CategoryPage } from "./Components/CategoryPage";
 import { PartyContext } from "./Contexts/Partycontext.js";
 import { CategoryContext } from "./Contexts/CategoryContext.js";
-import Categories from "./Components/Category";
+import Party from "./Components/Party.js";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -29,11 +29,7 @@ function App() {
               path="/register"
               render={props => <Register {...props} />}
             />{" "}
-            <PrivateRoute
-              exact
-              path="./Components/Categories"
-              component={Categories}
-            />
+            <PrivateRoute exact path="/Party" component={Party} />
             {/* <Route exact path='./Components/Categories' component={Categories} /> */}
           </CategoryContext.Provider>
         </PartyContext.Provider>
