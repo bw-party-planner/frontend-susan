@@ -10,17 +10,15 @@ export function CategoryPage() {
   const [categories, setcategories] = useState([]);
   const [deleteCategory, setdeletecategory] = useState([]);
 
-
-
-     useEffect(() => {
+  useEffect(() => {
     axiosWithAuth()
-      .get("https://mypartyplanner.herokuapp.com/api/categories")
+      .fetch("https://mypartyplanner.herokuapp.com/api/categories")
       .then(response => {
         console.log(response.data);
       })
       .catch(error => {
         console.log("there is an error with axios", error);
-     });
+      });
   }, []);
 
   return (

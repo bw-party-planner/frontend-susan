@@ -50,7 +50,7 @@ export class Categories extends React.Component {
       .then(res => {
         console.log(res);
         axios
-          .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
+          .fetch("https://mypartyplanner.herokuapp.com//api/categories/:id")
 
           .then(res => {
             console.log(res);

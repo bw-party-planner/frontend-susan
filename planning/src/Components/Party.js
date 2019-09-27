@@ -11,11 +11,9 @@ function Party() {
 
   useEffect(() => {
     axiosWithAuth()
-      .get(`https://mypartyplanner.herokuapp.com/api/parties`)
+      .fetch(`https://mypartyplanner.herokuapp.com/api/parties`)
       .then(response => {
-        const infos = response.data;
         console.log(response.data);
-        setInfos(infos);
       })
       .catch(error => {
         console.log("there is an error with axios", error);
