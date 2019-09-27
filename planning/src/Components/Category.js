@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
+
 import axiosWithAuth from "../utils/axiosWithAuth";
 import axios from "axios";
 import CategoryPage from "./CategoryPage.js";
@@ -10,6 +11,7 @@ export class Categories extends React.Component {
     super();
     this.newValue = {};
   }
+
   handleSubmit = e => {
     e.preventDefault();
     axiosWithAuth
@@ -44,7 +46,7 @@ export class Categories extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const deleteCatergory = () => {
-      axios
+      axiosWithAuth()
         .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
         .then(res => {
           console.log(res);
@@ -60,6 +62,7 @@ export class Categories extends React.Component {
         .catch(err => console.log(err.response));
     };
   };
+
   render(props) {
     return (
       <div className="buttons">
