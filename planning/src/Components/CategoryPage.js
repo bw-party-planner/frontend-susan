@@ -20,24 +20,33 @@ export function CategoryPage() {
   return (
     <div>
       <h1>Welcome</h1>
-      <button className="Birthday-Party" onClick={this.BirthdayPartyButton}>
+      <button
+        className="Birthday-Party"
+        onClick={props => this.BirthdayPartyButton}
+      >
         Birthday Party
       </button>
-      <button className="Halloween-Party" onClick={this.HalloweenPartyButton}>
+      <button
+        className="Halloween-Party"
+        onClick={props => this.HalloweenPartyButton}
+      >
         Halloween Party
       </button>
-      <button className="Garden-Party" onClick={this.GarndenPartyButton}>
+      <button
+        className="Garden-Party"
+        onClick={props => this.GarndenPartyButton}
+      >
         Garden Party
       </button>
-      <button className="Bachelor-Party" onClick={this.BachelorPartyButton}>
+      <button
+        className="Bachelor-Party"
+        onClick={props => this.BachelorPartyButton}
+      >
         Bachelor Party
       </button>
-      <button className="Add-Party" onClick={this.AddPartyButton}>
+      <button className="Add-Party" onClick={props => Addparty}>
         Add Party
       </button>
-      {categories.map(categories => (
-        <categories key={categories.id} categories={categories} />
-      ))}
       <span
         className="delete"
         onClick={() => deleteCategory(categories)}

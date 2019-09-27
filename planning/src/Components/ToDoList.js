@@ -1,4 +1,6 @@
 import React from "react";
+import axiosWithAuth from "../utils/axiosWithAuth";
+import axios from "axios";
 
 class ToDoList extends React.Component {
   constructor() {
@@ -6,9 +8,9 @@ class ToDoList extends React.Component {
     this.newValue = {};
   }
   handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault(this.props);
     const baseURL = "https://mypartyplanner.herokuapp.com/api";
-    axios
+    axiosWithAuth
       .post(`${baseURL}/api/parties/:id/todoList`)
       .then(res => {
         console.log(res);
@@ -18,9 +20,11 @@ class ToDoList extends React.Component {
       .catch(err => {
         console.log(err);
       });
+    window.location.reload();
   };
+
   putMessage = quote => {
-    axios
+    axiosWithAuth
       .put(
         "https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId",
         quote
@@ -41,13 +45,13 @@ class ToDoList extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const deleteItem = () => {
-      axiosWithAuth()
+      axios
         .delete(
           `https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId`
         )
         .then(res => {
           console.log(res);
-          axiosWithAuth()
+          axios
             .get(
               "https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId"
             )
@@ -60,11 +64,11 @@ class ToDoList extends React.Component {
     };
   };
 
-  render() {
+  render(props) {
     return (
       <div className="TodoList">
         <div className="Todoitem">
-          <h1>{props.item}</h1>
+          <h1>{this.props.item}</h1>
           <div key={props.task}>
             <button onClick={() => props.deleteItem(props.id)}>
               Remove from cart
