@@ -17,6 +17,7 @@ body{
   height: 580px;
   padding: 80px 40px;
   border-radius: 10px;
+  border:solid hot pink;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -97,40 +98,41 @@ body{
 
 
 .loginContainer {
-display:flex;
-align-items: center;
-flex-direction: column;
-justify-content: center;
-border: 1px solid red;
-height: 100vh;
-border: 10px solid rgb(122, 6, 139);
-width: 26%;
-height:37vh;
-margin-top: 150px;
-border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid red;
+  height: 100vh;
+  border: 10px solid rgb(122, 6, 139);
+  width: 26%;
+  height: 37vh;
+  margin-top: 150px;
+  border-radius: 10px;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
 }
 
 .loginwrapper {
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 input {
   margin-bottom: 15px;
   color: black;
   border: 3px solid gray;
   background: white;
-  padding:6%
+  padding: 6%
 }
 
 .SubmitButton {
   color: black;
-  background:gray;
+  background: gray;
   border: 2px solid gray;
   border-radius: 5px;
   width: 85px;
@@ -141,8 +143,8 @@ input {
   padding: 4px;
   margin-bottom: 8px;
 }
+
 .SubmitButton:hover {
   color: white;
   background: rgb(122, 6, 139);
 }
-
