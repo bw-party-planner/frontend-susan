@@ -3,6 +3,8 @@ import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import SignUpPage from "./Register";
 import CategoryPage from "../Components/CategoryPage.js";
+import ToDoList from "./ToDoList.js";
+import Party from "./Party.js";
 
 import "../index.css";
 
@@ -47,16 +49,24 @@ function Nav() {
       </Ul>
       <Route exact path="/sign-up" component={SignUpPage} />
       <Route exact path="/login" component={SignUpPage} />
+      <Route exact path="/Party" component={Party} />
       <Ul>
         <Link to="/signuppage">
           <Li>Home</Li>
         </Link>
+        <Link to="/Party">
+          <Li>Party</Li>
+        </Link>
         <Link to="/">
           <Li>Log out</Li>
+        </Link>
+        <Link to="/">
+          <Li>ToDoList</Li>
         </Link>
       </Ul>
       <Route exact path="/sign-up" component={SignUpPage} />
       <Route exact path="/login" component={SignUpPage} />
+      <Route exact path="/ToDoList" component={ToDoList} />
     </Navo>
   );
 }
