@@ -3,8 +3,6 @@ import { BrowserRouter as Route } from "react-router-dom";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import Addparty from "./Addparty";
 
-import "../parties/Categories.css";
-
 export function CategoryPage() {
   const [categories, setcategories] = useState([]);
   const [deleteCategory, setdeletecategory] = useState([]);
@@ -44,7 +42,7 @@ export function CategoryPage() {
         className="delete"
         onClick={() => deleteCategory(categories)}
       ></span>
-      <Route exact path="/getlogin" render={props => <Addparty {...props} />} />
+      <Route exact path="/addparty" render={props => <Addparty {...props} />} />
     </div>
   );
 }
