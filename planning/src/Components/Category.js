@@ -6,7 +6,7 @@ import axios from "axios";
 import CategoryPage from "./CategoryPage.js";
 import Categorys from "./Categorys.js";
 
-export class Categories extends React.Component {
+export class Category extends React.Component {
   constructor() {
     super();
     this.newValue = {};
@@ -100,5 +100,5 @@ export class Categories extends React.Component {
     );
   }
 }
-export default Categories;
+export default Category;
 // Close the dropdown menu if the user clicks outside of it
