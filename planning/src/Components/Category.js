@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
+
 import axiosWithAuth from "../utils/axiosWithAuth";
 import axios from "axios";
 import CategoryPage from "./CategoryPage.js";
@@ -10,56 +11,55 @@ export class Category extends React.Component {
     super();
     this.newValue = {};
   }
-  handleSubmit = e => {
-    e.preventDefault();
-    axiosWithAuth
-      .post(`https://mypartyplanner.herokuapp.com/api/categories`)
-      .then(res => {
-        console.log(res);
-        this.props.history.push("catergories/:id");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    window.location.reload();
-  };
 
-  putMessage = quote => {
-    axios
-      .put("https://mypartyplanner.herokuapp.com/api/categories/:id", quote)
-      .then(response => {
-        console.log(response);
-        this.setState({
-          putSuccessMessage: response.data.successMessage,
-          putError: "You need a Party!"
-        });
-      })
-      .catch(err => {
-        this.setState({
-          putSuccessMessage: "You have successfully chosen a party!",
-          putError: err.response.data.Error
-        });
-      });
-  };
-  handleSubmit = e => {
-    e.preventDefault();
-    const deleteCatergory = () => {
+  componentDidMount() {
+    const handleSubmit = e => {
+      e.preventDefault();
       axios
-        .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
+        .post(`https://mypartyplanner.herokuapp.com/api/categories`)
         .then(res => {
           console.log(res);
-          axios
-            .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
-
-            .then(res => {
-              console.log(res);
-              deleteCatergory(res.data);
-            })
-            .catch(err => console.log(err.response));
+          this.props.history.push("catergories/:id");
         })
-        .catch(err => console.log(err.response));
+        .catch(err => {
+          console.log(err);
+        });
+      window.location.reload();
     };
-  };
+
+    const putMessage = quote => {
+      axios
+        .put("https://mypartyplanner.herokuapp.com/api/categories/:id", quote)
+        .then(response => {
+          console.log(response);
+          this.setState({
+            putSuccessMessage: response.data.successMessage,
+            putError: "You need a Party!"
+          });
+        })
+        .catch(err => {
+          this.setState({
+            putSuccessMessage: "You have successfully chosen a party!",
+            putError: err.response.data.Error
+          });
+        });
+    };
+
+    axios
+      .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
+      .then(res => {
+        console.log(res);
+        axios
+          .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
+
+          .then(res => {
+            console.log(res);
+          })
+          .catch(err => console.log(err.response));
+      })
+      .catch(err => console.log(err.response));
+  }
+
   render(props) {
     return (
       <div className="buttons">

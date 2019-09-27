@@ -33,6 +33,9 @@ button {
 
   Form {
     padding-bottom: 3%;
+    display: flex;
+    justify-content: center;
+
   }
 
   /* Dropdown Button */
@@ -113,5 +116,35 @@ label {
   padding: .5%;
   width: 10%;
 }
+
+.inputregister {
+  width: 25%;
+  height: 10%;
+  padding:2%;
+}
+
+.formregister {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+button.SubmitButton {
+  margin: 0;
+  
+}
  
+
+.RegisterForm {
+  background: purple;
+  margin-top: 1%;
+  padding-top: 13%;
+  padding-bottom: 5%;
+}
+
+.regtitle {
+  font-size: 1.7rem;
+}
 

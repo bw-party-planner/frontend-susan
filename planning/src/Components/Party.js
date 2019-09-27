@@ -23,8 +23,9 @@ function Party() {
   return (
     <div className="PartyPage">
       <h1>Welcome to the Party Page </h1>
-
+      <ShoppingList />
       <Categories />
+      <ToDoList />
     </div>
   );
 }

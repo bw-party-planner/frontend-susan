@@ -47,7 +47,7 @@ const GetLogin = props => {
             name="password"
             onChange={changeHandler}
           />
-          <button type="submit" className="SubmitButton">
+          <button type="submit" className="SubmitButtonn">
             Login!
           </button>
           <span>
