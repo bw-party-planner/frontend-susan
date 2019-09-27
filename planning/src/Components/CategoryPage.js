@@ -5,7 +5,7 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 import Addparty from "./Addparty";
 import { CategoryContext } from "../Contexts/CategoryContext.js";
 
-import "../parties/Catergories.css";
+import "../parties/Categories.css";
 
 export function CategoryPage() {
   const [infos, setInfos] = useState([]);
@@ -54,7 +54,7 @@ export function CategoryPage() {
   };
   handleSubmit = e => {
     e.preventDefault();
-    const deleteCatergory = () => {
+    const deleteCategory = () => {
       axiosWithAuth()
         .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
         .then(res => {
@@ -62,7 +62,7 @@ export function CategoryPage() {
             .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
 
             .then(res => {
-              deleteCatergory(res.data);
+              deleteCategory(res.data);
             })
             .catch(err => console.log(err.response));
         })
