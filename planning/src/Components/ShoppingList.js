@@ -25,18 +25,6 @@ class ShoppingList extends React.Component {
           console.log(err);
         });
     };
-
-    const baseURL = "https://mypartyplanner.herokuapp.com/api";
-    axiosWithAuth()
-      .post(`${baseURL}/api/parties/:id/shoppingList`)
-      .then(res => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-        this.props.history.push("parties/:id/shoppingList");
-      })
-      .catch(err => {
-        console.log(err);
-      });
   }
   putMessage = quote => {
     axios
@@ -66,11 +54,13 @@ class ShoppingList extends React.Component {
         )
         .then(res => {
           console.log(res);
+
           axios
             .get(
               "https://mypartyplanner.herokuapp.com/api/parties/:id/shoppingList/:itemId"
             )
             .then(res => {
+              console.log(res);
               deleteItem(res.data);
             })
             .catch(err => console.log(err.response));
