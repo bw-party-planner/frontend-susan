@@ -3,7 +3,7 @@ import axios from "axios";
 
 import GetLogin from "./GetLogin.js";
 import RegisterForm from "./Register";
-import { Link, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import styled from "styled-components";
 import "../index.css";
 

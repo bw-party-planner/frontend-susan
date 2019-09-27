@@ -8,6 +8,7 @@ import PrivateRoute from "./Components/PrivateRoute";
 import { CategoryPage } from "./Components/CategoryPage";
 import { PartyContext } from "./Contexts/Partycontext.js";
 import { CategoryContext } from "./Contexts/CategoryContext.js";
+import Categories from "./Components/Categories";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -30,10 +31,10 @@ function App() {
             />{" "}
             <PrivateRoute
               exact
-              path="./Components/CategoryPage"
-              component={CategoryPage}
+              path="./Components/Categories"
+              component={Categories}
             />
-            {/* <Route exact path='./Components/CategoryPage' component={CategoryPage} /> */}
+            {/* <Route exact path='./Components/Categories' component={Categories} /> */}
           </CategoryContext.Provider>
         </PartyContext.Provider>
       </Router>
