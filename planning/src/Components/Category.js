@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
-
 import axiosWithAuth from "../utils/axiosWithAuth";
 import axios from "axios";
+
 import CategoryPage from "./CategoryPage.js";
 import Categorys from "./Categorys.js";
 

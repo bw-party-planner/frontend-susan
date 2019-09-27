@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
 import { useContext } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
-import Addparty from "./Partydata";
 import { CategoryContext } from "../Contexts/CategoryContext.js";
 
 export function CategoryPage() {

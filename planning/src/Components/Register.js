@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-import GetLogin from "./GetLogin.js";
-import RegisterForm from "./Register";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
 import "../index.css";
+
+import GetLogin from "./GetLogin.js";
+import RegisterForm from "./Register";
 
 const RegisterB = styled.div`
   background: black;
