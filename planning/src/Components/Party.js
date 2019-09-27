@@ -4,6 +4,7 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 
 import ToDoList from "./ToDoList.js";
 import ShoppingList from "./ShoppingList.js";
+import Categories from "./Category";
 function Party() {
   const [infos, setInfos] = useState("");
 
@@ -22,15 +23,8 @@ function Party() {
   return (
     <div className="PartyPage">
       <h1>Welcome to the Party Page </h1>
-      <Party
-        id={infos.id}
-        guest={infos.guests}
-        theme={infos.theme}
-        date={infos.date}
-        budget={infos.budget}
-        category_id={infos.category_id}
-      />
-      <ToDoList />
+
+      <Categories />
     </div>
   );
 }

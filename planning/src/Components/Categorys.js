@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
 import { useContext } from "react";
 import { CategoryContext } from "./Contexts/CategoryContext.js";
 
-const Category = () => {
+const Categorys = () => {
   const { Category } = useContext(CategoryContext);
+  const { category } = useState(category);
 
   return (
     <div>
@@ -18,4 +19,4 @@ const Category = () => {
   );
 };
 
-export default category;
+export default Categorys;

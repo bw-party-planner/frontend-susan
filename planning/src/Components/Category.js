@@ -22,23 +22,7 @@ export class Categories extends React.Component {
       });
     window.location.reload();
   };
-  putMessage = quote => {
-    axiosWithAuth()
-      .put("https://mypartyplanner.herokuapp.com/api/categories/:id", quote)
-      .then(response => {
-        console.log(response);
-        this.setState({
-          putSuccessMessage: response.data.successMessage,
-          putError: "You need a Party!"
-        });
-      })
-      .catch(err => {
-        this.setState({
-          putSuccessMessage: "You have successfully chosen a party!",
-          putError: err.response.data.Error
-        });
-      });
-  };
+
   handleSubmit = e => {
     e.preventDefault();
     const deleteCatergory = () => {
@@ -58,7 +42,7 @@ export class Categories extends React.Component {
         .catch(err => console.log(err.response));
     };
   };
-  render() {
+  render(props) {
     return (
       <div className="buttons">
         <h1>Catergories</h1>
