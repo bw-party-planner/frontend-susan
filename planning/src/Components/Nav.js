@@ -33,7 +33,6 @@ const Li = styled.li`
 
 const Navo = styled.div`
   background: black;
-
   background: #8e44ad;
 `;
 
