@@ -3,20 +3,17 @@ import axios from "axios";
 import axiosWithAuth from "../utils/axiosWithAuth.js";
 import CategoryPage from "../Components/CategoryPage";
 
-import "../parties/Categories.css";
-
 import CategoryContext from "../Contexts/CategoryContext.js";
 
-class Categories extends React.Component {
+export class Categories extends React.Component {
   constructor() {
     super();
     this.newValue = {};
   }
   handleSubmit = e => {
     e.preventDefault();
-    const baseURL = "https://mypartyplanner.herokuapp.com/api";
     axiosWithAuth
-      .post(`${baseURL}/categories`)
+      .post(`https://mypartyplanner.herokuapp.com/api/categories`)
       .then(res => {
         console.log(res);
         this.props.history.push("catergories/:id");
@@ -26,7 +23,7 @@ class Categories extends React.Component {
       });
   };
   putMessage = quote => {
-    axios
+    axiosWithAuth()
       .put("https://mypartyplanner.herokuapp.com/api/categories/:id", quote)
       .then(response => {
         console.log(response);
