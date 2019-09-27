@@ -35,9 +35,6 @@ export function CategoryPage() {
       <button className="Add-Party" onClick={this.AddPartyButton}>
         Add Party
       </button>
-      {categories.map(categories => (
-        <categories key={categories.id} categories={categories} />
-      ))}
       <span
         className="delete"
         onClick={() => deleteCategory(categories)}

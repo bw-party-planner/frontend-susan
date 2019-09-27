@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import CategoryPage from "./CategoryPage.js";
+import Categorys from "./Categorys.js";
 
 export class Categories extends React.Component {
   constructor() {
@@ -19,6 +20,7 @@ export class Categories extends React.Component {
       .catch(err => {
         console.log(err);
       });
+    window.location.reload();
   };
   putMessage = quote => {
     axiosWithAuth()
@@ -60,22 +62,38 @@ export class Categories extends React.Component {
     return (
       <div className="buttons">
         <h1>Catergories</h1>
-        <button className="Birthday-Party" onClick={this.BirthdayPartyButton}>
+        <button
+          className="Birthday-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Birthday Party
         </button>
-        <button className="Halloween-Party" onClick={this.HalloweenPartyButton}>
+        <button
+          className="Halloween-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Halloween Party
         </button>
-        <button className="Garden-Party" onClick={this.GarndenPartyButton}>
+        <button
+          className="Garden-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Garden Party
         </button>
-        <button className="Bachelor-Party" onClick={this.BachelorPartyButton}>
+        <button
+          className="Bachelor-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Bachelor Party
         </button>
-        <button className="Add-Party" onClick={this.AddPartyButton}>
+        <button
+          className="Add-Party"
+          onClick={() => props.addItem(props.button)}
+        >
           Add Party
         </button>
         <CategoryPage />
+        <Categorys />
       </div>
     );
   }
