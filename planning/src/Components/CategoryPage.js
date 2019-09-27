@@ -1,15 +1,18 @@
-import React, { useState, useEffect }from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
 import { useContext } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
-import Addparty from "./Addparty";
+import Addparty from "./Partydata";
 import { CategoryContext } from "../Contexts/CategoryContext.js";
 
 export function CategoryPage() {
   const { Category } = useContext(CategoryContext);
   const [categories, setcategories] = useState([]);
   const [deleteCategory, setdeletecategory] = useState([]);
-  useEffect(() => {
+
+
+
+     useEffect(() => {
     axiosWithAuth()
       .get("https://mypartyplanner.herokuapp.com/api/categories")
       .then(response => {
@@ -17,7 +20,7 @@ export function CategoryPage() {
       })
       .catch(error => {
         console.log("there is an error with axios", error);
-      });
+     });
   }, []);
 
   return (
@@ -54,7 +57,6 @@ export function CategoryPage() {
         className="delete"
         onClick={() => deleteCategory(categories)}
       ></span>
-      <Route exact path="/addparty" render={props => <Addparty {...props} />} />
     </div>
   );
 }
