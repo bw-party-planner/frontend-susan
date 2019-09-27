@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
 import axiosWithAuth from "../utils/axiosWithAuth";
-
+import axios from "axios";
 import ToDoList from "./ToDoList.js";
 import ShoppingList from "./ShoppingList.js";
 import Categories from "./Category";
@@ -9,7 +9,7 @@ function Party() {
   const [infos, setInfos] = useState("");
 
   useEffect(() => {
-    axiosWithAuth
+    axiosWithAuth()
       .get(`https://mypartyplanner.herokuapp.com/api/parties`)
       .then(response => {
         const infos = response.data;

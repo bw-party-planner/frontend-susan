@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Route } from "react-router-dom";
 import axiosWithAuth from "../utils/axiosWithAuth";
+import axios from "axios";
 import CategoryPage from "./CategoryPage.js";
 import Categorys from "./Categorys.js";
 
@@ -23,14 +24,31 @@ export class Categories extends React.Component {
     window.location.reload();
   };
 
+  putMessage = quote => {
+    axios
+      .put("https://mypartyplanner.herokuapp.com/api/categories/:id", quote)
+      .then(response => {
+        console.log(response);
+        this.setState({
+          putSuccessMessage: response.data.successMessage,
+          putError: "You need a Party!"
+        });
+      })
+      .catch(err => {
+        this.setState({
+          putSuccessMessage: "You have successfully chosen a party!",
+          putError: err.response.data.Error
+        });
+      });
+  };
   handleSubmit = e => {
     e.preventDefault();
     const deleteCatergory = () => {
-      axiosWithAuth()
+      axios
         .delete(`https://mypartyplanner.herokuapp.com/api/categories/:id`)
         .then(res => {
           console.log(res);
-          axiosWithAuth()
+          axios
             .get("https://mypartyplanner.herokuapp.com//api/categories/:id")
 
             .then(res => {

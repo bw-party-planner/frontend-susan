@@ -1,5 +1,6 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
+import axios from "axios";
 
 class ToDoList extends React.Component {
   constructor() {
@@ -9,7 +10,7 @@ class ToDoList extends React.Component {
   handleSubmit = e => {
     e.preventDefault(this.props);
     const baseURL = "https://mypartyplanner.herokuapp.com/api";
-    axiosWithAuth(this.props)
+    axiosWithAuth
       .post(`${baseURL}/api/parties/:id/todoList`)
       .then(res => {
         console.log(res);
@@ -22,16 +23,35 @@ class ToDoList extends React.Component {
     window.location.reload();
   };
 
+  putMessage = quote => {
+    axiosWithAuth
+      .put(
+        "https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId",
+        quote
+      )
+      .then(response => {
+        this.setState({
+          putSuccessMessage: response.data.successMessage,
+          putError: "You need a to chose a Item!"
+        });
+      })
+      .catch(err => {
+        this.setState({
+          putSuccessMessage: "You have successfully chosen a Item!",
+          putError: err.response.data.Error
+        });
+      });
+  };
   handleSubmit = e => {
     e.preventDefault();
     const deleteItem = () => {
-      axiosWithAuth()
+      axios
         .delete(
           `https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId`
         )
         .then(res => {
           console.log(res);
-          axiosWithAuth()
+          axios
             .get(
               "https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId"
             )

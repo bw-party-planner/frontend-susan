@@ -1,10 +1,10 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
-import { CategoryContext } from "./Contexts/CategoryContext.js";
+import { CategoryContext } from "../Contexts/CategoryContext.js";
 
 const Categorys = () => {
   const { Category } = useContext(CategoryContext);
-  const { category } = useState(category);
+  const [category, setCategory] = useState([]);
 
   return (
     <div>
