@@ -8,13 +8,10 @@ export default class CategoryList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      str: 'categories!',
-      arr: [1, 2, 3, 4, 5],
-      num: null // not initialized with a value
+      category: [array]
     };
   }
-    };
-  }
+
   componentDidMount() {
     axiosWithAuth()
       .get("https://mypartyplanner.herokuapp.com/api/categories")
@@ -27,7 +24,11 @@ export default class CategoryList extends Component {
       <CategoryContext.Provider>
         <div className="category-list">
           {this.state.category.map(category => (
-            <CategoryDetails key={category.id} category={category} />
+            <CategoryDetails
+              key={category.id}
+              category={category}
+              arr={(1, 2, 3, 4, 5)}
+            />
           ))}
         </div>
       </CategoryContext.Provider>
