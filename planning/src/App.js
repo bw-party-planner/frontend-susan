@@ -5,7 +5,7 @@ import GetLogin from "./Components/GetLogin";
 import Register from "./Components/Register";
 import Nav from "./Components/Nav";
 import PrivateRoute from "./Components/PrivateRoute";
-import { CategoryPage } from "./Components/CategoryPage";
+
 import { PartyContext } from "./Contexts/Partycontext.js";
 import { CategoryContext } from "./Contexts/CategoryContext.js";
 import Party from "./Components/Party.js";
@@ -30,7 +30,7 @@ function App() {
               render={props => <Register {...props} />}
             />{" "}
             <PrivateRoute exact path="/Party" component={Party} />
-            {/* <Route exact path='./Components/Categories' component={Categories} /> */}
+            {/* <Route exact path='./category/Category' component={Category} /> */}
           </CategoryContext.Provider>
         </PartyContext.Provider>
       </Router>

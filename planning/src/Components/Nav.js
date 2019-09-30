@@ -6,8 +6,6 @@ import SignUpPage from "./Register";
 import ToDoList from "./ToDoList.js";
 import Party from "./Party.js";
 
-import CategoryPage from "../Components/CategoryPage.js";
-
 import "../index.css";
 
 const Ul = styled.ul`
