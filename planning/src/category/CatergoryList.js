@@ -8,10 +8,13 @@ export default class CategoryList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: []
+      str: 'categories!',
+      arr: [1, 2, 3, 4, 5],
+      num: null // not initialized with a value
     };
   }
-
+    };
+  }
   componentDidMount() {
     axiosWithAuth()
       .get("https://mypartyplanner.herokuapp.com/api/categories")
