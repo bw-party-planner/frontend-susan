@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
 import CategoryCard from "./CategoryCard";
+import CategoryContext from "../Contexts/CategoryContext";
 export default class CategoryList extends Component {
   constructor(props) {
     super(props);
@@ -20,11 +21,13 @@ export default class CategoryList extends Component {
 
   render() {
     return (
-      <div className="category-list">
-        {this.state.category.map(category => (
-          <CategoryDetails key={category.id} category={category} />
-        ))}
-      </div>
+      <CategoryContext.Provider>
+        <div className="category-list">
+          {this.state.category.map(category => (
+            <CategoryDetails key={category.id} category={category} />
+          ))}
+        </div>
+      </CategoryContext.Provider>
     );
   }
 }

@@ -13,7 +13,7 @@ function Party() {
 
   useEffect(() => {
     axiosWithAuth()
-      .post(`https://mypartyplanner.herokuapp.com/api/parties`)
+      .get(`https://mypartyplanner.herokuapp.com/api/parties`)
       .then(response => {
         console.log(response.data);
       })

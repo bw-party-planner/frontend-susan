@@ -13,7 +13,7 @@ class ToDoList extends React.Component {
       e.preventDefault(this.props);
       const baseURL = "https://mypartyplanner.herokuapp.com/api";
       axiosWithAuth()
-        .post(`${baseURL}/api/parties/:id/todoList`)
+        .get(`${baseURL}/api/parties/:id/todoList`)
         .then(res => {
           console.log(res);
           localStorage.setItem("token", res.data.token);

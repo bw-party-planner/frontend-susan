@@ -10,6 +10,14 @@ export function ToDoLists() {
   const [ToDoList, setToDoList] = useState([]);
 
   useEffect(() => {
+    axiosWithAuth()
+      .get("https://mypartyplanner.herokuapp.com/api/parties")
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
     axios
       .get(
         "https://mypartyplanner.herokuapp.com/api/parties/:id/todoList/:taskId"
@@ -33,6 +41,7 @@ export function ToDoLists() {
           <h2>{info.categories}</h2>
         </div>
       ))}
+
       <span
         className="delete"
         onClick={props => deleteitem(this.props.deleteitem)}
