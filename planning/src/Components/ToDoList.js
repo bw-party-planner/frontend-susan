@@ -24,7 +24,18 @@ class ToDoList extends React.Component {
         });
       window.location.reload();
     };
+    axiosWithAuth()
+      .get("https://mypartyplanner.herokuapp.com/api/parties/:id/todoList")
+      .then(res => {
+        console.log(res);
+        localStorage.setItem("token", res.data.token);
+        this.props.history.push("parties/:id/todoList");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
+
   render(props) {
     return (
       <div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
+
 import SignUpPage from "./Register";
-import CategoryPage from "../Components/CategoryPage.js";
 import ToDoList from "./ToDoList.js";
 import Party from "./Party.js";
 

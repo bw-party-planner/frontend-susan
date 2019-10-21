@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-import GetLogin from "./GetLogin.js";
-import RegisterForm from "./Register";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
 import "../index.css";
+
+import GetLogin from "./GetLogin.js";
+import RegisterForm from "./Register";
 
 const RegisterB = styled.div`
   background: black;
@@ -44,7 +44,6 @@ function Register(props) {
 
   return (
     <div className="RegisterForm">
-
       <form onSubmit={handleSubmit}>
         <p>Register</p>
         <div className="inputregister">
@@ -64,25 +63,6 @@ function Register(props) {
           />
         </div>
         <button type="submit" className="SubmitButtonregister">
-
-      <form className="formregister" onSubmit={handleSubmit}>
-        <p className="regtitle">Register</p>
-        <input className='inputregister'
-          value={username}
-          name="username"
-          type="text"
-          onChange={e => setUsername(e.target.value)}
-          placeholder="username"
-        />
-        <input className='inputregister'
-          value={password}
-          name="password"
-          type="password"
-          onChange={e => setPassword(e.target.value)}
-          placeholder="password"
-        />
-        <button type="submit" className="SubmitButton">
-
           Connect!
         </button>
       </form>

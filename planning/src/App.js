@@ -5,15 +5,13 @@ import GetLogin from "./Components/GetLogin";
 import Register from "./Components/Register";
 import Nav from "./Components/Nav";
 import PrivateRoute from "./Components/PrivateRoute";
-import { CategoryPage } from "./Components/CategoryPage";
+
 import { PartyContext } from "./Contexts/Partycontext.js";
 import { CategoryContext } from "./Contexts/CategoryContext.js";
 import Party from "./Components/Party.js";
-import BubblePage from "./Components/BubblePage.js";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [colorList, setColorList] = useState([]);
   return (
     <div className="App">
       <Router>
@@ -31,8 +29,8 @@ function App() {
               path="/register"
               render={props => <Register {...props} />}
             />{" "}
-            {<PrivateRoute exact path="/bubbles" component={BubblePage} />}
-            {/* <Route exact path='./Components/Categories' component={Categories} /> */}
+            <PrivateRoute exact path="/Party" component={Party} />
+            {/* <Route exact path='./category/Category' component={Category} /> */}
           </CategoryContext.Provider>
         </PartyContext.Provider>
       </Router>

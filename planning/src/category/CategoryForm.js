@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "../index.css";
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 class CategoryForm extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class CategoryForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const baseURL = "https://mypartyplanner.herokuapp.com/api";
-    axios
+    axiosWithAuth()
       .post(`${baseURL}/categories`)
       .then(res => {
         console.log(res);
@@ -46,8 +47,8 @@ class CategoryForm extends React.Component {
             <option value="mango">Bachelor Party</option>
           </select>
         </label>
-        <div className='btncatwrapper'>
-        <input className="btncat" type="submit" value="Submit" />
+        <div className="btncatwrapper">
+          <input className="btncat" type="submit" value="Submit" />
         </div>
       </form>
     );
